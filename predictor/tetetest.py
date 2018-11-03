@@ -25,7 +25,7 @@ class LeafPredictor:
         self.x_train = np.asarray(x_train)
 
         # Reshape
-        self.x_train = self.x_train.reshape(self.x_train.shape[0], self.x_train.shape[1]*self.x_train.shape[2])    
+        self.x_train = self.x_train.flatten().reshape(1,-1)      
         self.y_train = y_train
 
     def predict(self, x_test):
@@ -42,13 +42,15 @@ def convert_images(location):
         # Transform to black
         # Or perform other stuff
         # reshape numpy
-        
+       
         # Resize
         img = cv2.resize(img, (0,0), fx = 0.3, fy = 0.3)
-        print(img.shape[0]) 
+     
         # Reshape
-        img = img.reshape(len(img), img.shape[1] * img.shape[2])
         
+        img = np.asarray(img)
+        img = img.reshape(1, img.shape[0] * img.shape[1] * img.shape[2])
+
         transformed_image.append(img)
 
     return transformed_image
@@ -72,16 +74,18 @@ def load_data():
 
 def load_test_data():
 
-    data_dir = r"C:\\Users\\miguel kristoffer\\Desktop\\leaf_predict\\data\\test_shapes\\test_data\\c1.jpg"
+    data_dir = r"C:\\Users\\miguel kristoffer\\Desktop\\leaf_predict\\data\\test_shapes\\circle\\test_data\\t3.jpg"
     img = cv2.imread(data_dir)
 
     # Resize
     img = cv2.resize(img, (0,0), fx = 0.3, fy = 0.3)
     
     # Reshape
-    img = img.reshape(img.shape[0], img.shape[1] * img.shape[2])
+    # img = 
+    
     img = np.asarray(img)
     img = img.reshape(1, img.shape[0] * img.shape[1])
+    
     return img
 
 

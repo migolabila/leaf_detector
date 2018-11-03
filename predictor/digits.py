@@ -26,12 +26,12 @@ print(digits.images.shape)
 
 #lets try to print features and labels we have in the dataset
 print(digits.images)
-print(digits.target)
+# print(digits.target)
 
 #lets also see the dimension of data we have
 
-print(digits.images.shape)
-print(digits.target.shape)
+# print(digits.images.shape)
+# print(digits.target.shape)
 
 
 
@@ -56,8 +56,8 @@ clf=KNeighborsClassifier(n_neighbors=3).fit(x_train,y_train)
 #lets try to predict accuracy over test data
 
 from sklearn.metrics import accuracy_score
-print("accuracy found is")
-print(accuracy_score(y_test,clf.predict(x_test)))
+# print("accuracy found is")
+# print(accuracy_score(y_test,clf.predict(x_test)))
 #our classifier is 98% accurate
 
 

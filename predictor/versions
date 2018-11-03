@@ -1,0 +1,10 @@
+python.__version__.
+import numpy
+import scipy
+import cv2
+import sklearn
+
+numpy.__version__.
+scipy.__version__.
+cv2.__version__.
+sklearn.__version__.
